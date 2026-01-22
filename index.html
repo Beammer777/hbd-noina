@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD My Special One</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --main-pink: #ff9a9e;
+            --deep-pink: #fad0c4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Kanit', sans-serif; 
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            overflow-x: hidden;
+            color: #444;
+        }
+
+        /* --- Full Screen Hero with Parallax --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1516589174184-c6852657d803?auto=format&fit=crop&q=80&w=1500') center/cover no-repeat fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 { font-family: 'Caveat', cursive; font-size: 7rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; letter-spacing: 5px; font-weight: 200; text-transform: uppercase; }
+
+        /* --- Floating Hearts --- */
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+        /* --- Section Styling --- */
+        .container { max-width: 1000px; margin: auto; padding: 100px 20px; position: relative; z-index: 1; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        /* --- Modern Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: 0.5s ease;
+        }
+        .gallery-img:hover { transform: translateY(-10px) scale(1.02); }
+
+        /* --- Message Aesthetic --- */
+        .message-title { font-family: 'Caveat', cursive; font-size: 4rem; color: var(--main-pink); margin-bottom: 20px; }
+        .message-text { font-size: 1.2rem; line-height: 2; font-weight: 300; }
+
+        /* --- Buttons --- */
+        .btn {
+            background: linear-gradient(to right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            border: none;
+            padding: 15px 40px;
+            color: white;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(255, 154, 158, 0.4);
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 15px 25px rgba(255, 154, 158, 0.6); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-bg" id="heartContainer"></div>
+
+    <header class="hero">
+        <div data-aos="zoom-in" data-aos-duration="2000">
+            <h1>Happy Birthday</h1>
+            <center><p>To my Noina</p></center>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="glass-card" data-aos="fade-up">
+            <h2 class="message-title">Our Story</h2>
+            <p class="message-text">ตั้งแต่วันแรกที่เจอกัน จนถึงวันนี้... ตัวคือของขวัญที่ดีที่สุดในชีวิตเค้าเลยนะ</p>
+        </div>
+
+        <div class="gallery-grid">
+            <img src="1.jpg" class="gallery-img" data-aos="fade-right">
+            <img src="2.jpg" class="gallery-img" data-aos="fade-left">
+            <img src="3.jpg" class="gallery-img" data-aos="fade-right">
+            <img src="4.jpg" class="gallery-img" data-aos="fade-left">
+        </div>
+
+        <div class="glass-card" style="margin-top: 50px;" data-aos="zoom-in">
+            <h2 class="message-title">Moments in Motion</h2>
+            <video controls style="width: 100%; border-radius: 20px;">
+                <source src="5.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="glass-card" data-aos="fade-up">
+            <h2 class="message-title">NoiNa</h2>
+            <p class="message-text">
+                สุขสันต์วันเกิดนะงับบักอ้วน ขอบคุณที่คอยซัพพอร์ตและเป็นรอยยิ้มให้เค้าเสมอ <br>
+                ขอให้ปีนี้เป็นปีที่ตัวมีความสุขที่สุด ประสบความสำเร็จในทุกๆเรื่องที่ตั้งใจ <br>
+                เค้าจะอยู่ตรงนี้ คอยกอดและให้กำลังใจเธอในทุกๆ วันนะ <br>
+                <strong>รักที่สุดเลยงับ ❤️</strong>
+            </p>
+            <a href="#" class="btn" onclick="celebrate()">คลิกรับคำอวยพรเพิ่ม</a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        AOS.init();
+
+        function celebrate() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // สร้างหัวใจลอยๆ
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.opacity = Math.random();
+            heart.style.transition = '5s linear';
+            heart.style.zIndex = '0';
+            
+            document.getElementById('heartContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.style.transform = `translateY(-110vh) rotate(${Math.random() * 360}deg)`;
+            }, 100);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
